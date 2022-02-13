@@ -1,0 +1,26 @@
+<div class="container" style="margin: 30px auto;">
+    <div fxLayout="column">
+
+        <label>Select your metadata format</label>
+        <mat-radio-group (change)="onGroupChange($event)" color="primary" class="radio-group">
+            <mat-radio-button [value]="1" [checked]="selectedMetadata == 1">Metadata v1</mat-radio-button>
+            <mat-radio-button [value]="2" [checked]="selectedMetadata == 2">Metadata v2</mat-radio-button>
+        </mat-radio-group>
+
+        <hr class="full-width">
+
+
+        <form [formGroup]="form" (ngSubmit)="save(form)" autocomplete="off">
+
+            <mat-form-field class="full-width" appearance="standard">
+                <mat-label>NFT Storage API key</mat-label>
+                <textarea matInput rows="4" placeholder="Type api key" formControlName="apiKey" #apiKeyInput></textarea>
+                <mat-error>{{ getErrorMessageApiKey() }}</mat-error>
+            </mat-form-field>
+
+            <p><mat-checkbox [checked]="isDisabled" color='primary' (change)="onChange($event)">Edit</mat-checkbox></p>
+
+            <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="!form.valid">Save API key</button>
+        </form>
+    </div>
+</div>

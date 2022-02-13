@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Connect Your Hedera Account</h1>
+<div mat-dialog-content>
+  
+    <form [formGroup]="connectForm" autocomplete="off">
+        <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Account Id</mat-label>
+            <input matInput placeholder="Type acount id" formControlName="accountId" pattern="^0\.0\.([0-9])+$" #accountIdInput>
+            <mat-error>{{ getErrorMessageAccountId() }}</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Private Key</mat-label>
+            <textarea matInput rows="4" placeholder="Type private key" formControlName="privateKey" #privateKeyInput></textarea>
+            <mat-error>{{ getErrorMessagePrivateKey() }}</mat-error>
+        </mat-form-field>
+
+        <p><mat-checkbox color="primary" (change)="onChange($event)" formControlName="testnetHedera">Testnet account</mat-checkbox></p>
+    </form>
+
+    
+
+</div>
+<div mat-dialog-actions>
+    <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button (click)="clickOK()" color="primary" [disabled]="!connectForm.valid">Connect</button>
+</div>

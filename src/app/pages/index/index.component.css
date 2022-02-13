@@ -1,0 +1,13 @@
+#wrapper{
+    min-height: calc(100vh - 64px); 
+    box-sizing: border-box;
+}
+#tab-group{
+    height: 100%;
+}
+
+@media (max-width: 599px) {
+    #wrapper{
+        min-height: calc(100vh - 56px); 
+    }
+}

@@ -1,0 +1,8 @@
+<mat-tab-group mat-stretch-tabs animationDuration="0ms">
+    <ng-container *ngFor="let tab of tabsName">
+      <mat-tab label="{{tab.name}}">
+        <ng-container *ngTemplateOutlet="tab.template"></ng-container>
+      </mat-tab>
+    </ng-container>
+</mat-tab-group>
+<ng-content></ng-content>

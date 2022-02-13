@@ -1,0 +1,8 @@
+<mat-toolbar>
+    <span>HederaverseNFT Toolkit</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="primary" (click)="openDialog()" *ngIf="!disconnectAccount">Connect</button>
+    <button mat-raised-button color="primary" (click)="onDisconnect()" *ngIf="disconnectAccount">Disconnect ( {{ accountId }} )</button>
+</mat-toolbar>
+
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>

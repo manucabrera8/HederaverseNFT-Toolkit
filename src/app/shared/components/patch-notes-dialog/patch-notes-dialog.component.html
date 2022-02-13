@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Patch Notes</h1>
+<div mat-dialog-content style="padding-bottom: 20px;">
+
+    <mat-accordion multi="true">
+        <mat-expansion-panel *ngFor="let patchNote of data; first as isFirst" [expanded]="isFirst">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ patchNote.title }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div [innerHTML]="patchNote.content"></div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+</div>
+<div mat-dialog-actions  align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</div>

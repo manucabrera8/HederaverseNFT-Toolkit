@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "HederaverseNFT Toolkit",
+    "version": "1.0.0",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "description": "HederaverseNFT Toolkit",
+    "action": {
+        "default_icon": "assets/images/128x128.png"
+    },
+    "permissions": ["tabs"],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "icons": {
+        "16": "assets/images/16x16.png",
+        "48": "assets/images/48x48.png",
+        "128": "assets/images/128x128.png"
+    }
+}
