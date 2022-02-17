@@ -1,4 +1,4 @@
-# HederaverseNFT-Toolkit  👽 ![version](https://img.shields.io/badge/version-1.0.0-blueviolet.svg) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/HederaverseNFT) [![Chat](https://img.shields.io/badge/Support-on%20discord-7289da.svg)](https://discord.gg/56TxzvSFVS)
+# ![HederaverseNFT](src/assets/images/48x48.png "HederaverseNFT") HederaverseNFT-Toolkit  👽 ![version](https://img.shields.io/badge/version-1.0.0-blueviolet.svg) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/HederaverseNFT) [![Chat](https://img.shields.io/badge/Support-on%20discord-7289da.svg)](https://discord.gg/56TxzvSFVS)
 
 
 ***We are a group of designers and developers working on our NFT label inside Hedera network.***
@@ -42,13 +42,14 @@ You can also run the code on your local PC all you have to do is:
 6- And `ng serve` then navigate to [http://localhost:4200](http://localhost:4200) or you can use `ng serve --open` to open the page automatically!
 
 
-
+## Just want to use it? (Chrome Extension)
+[![HederaverseNFT](https://hederaversenft.com/chrome.png "Chrome")](https://chrome.google.com/webstore/detail/hederaversenft-toolkit/fililjofpknghengnbfecoilpjjihogc/)
 
 
 
 
 ---------------------------------------------------------
-If you liked our project, we would appreciate your support donation 0.0.586468
+***If you liked our project, we would appreciate your support donation 0.0.586468***
 
 
 
