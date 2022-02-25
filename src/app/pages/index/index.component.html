@@ -1,15 +1,15 @@
 <app-toolbar (isConnect)="setIsConnect($event)" [disconnectAccount]="isConnect" [accountId]="accountId" [isLoading]="isLoading"></app-toolbar>
 
-<div class="mat-app-background" id="wrapper">
-    <app-tabs [tabsName]="allTabs" id="wrapper"></app-tabs>
-    <ng-template #CreateToken>
+<div class="mat-app-background">
+    <app-tabs [tabsName]="allTabs"></app-tabs>
+    <ng-template #NFT>
         <div class="container" style="margin: 30px auto;" *ngIf="!isConnect">
             <h1 class="text-center"><mat-icon color="warn">warning</mat-icon> in order to start minting you need to connect your hedera account</h1>
         </div>
         <div class="container" style="margin: 30px auto;" *ngIf="!hasNFTStorageApiKey">
             <h1 class="text-center"><mat-icon color="warn">warning</mat-icon> You need to create a new account on <a mat-stroked-button href="https://nft.storage/" target="_blank">nft.storage</a> website and use its api key inside settings tab. if you already have an account on nft.storage you can use that api as well.</h1>
         </div>
-        <app-create-token *ngIf="isConnect && hasNFTStorageApiKey" (isLoading)="setIsLoading($event)"></app-create-token>
+        <router-outlet *ngIf="isConnect && hasNFTStorageApiKey"></router-outlet>
     </ng-template>
     <ng-template #Settings>
         <app-settings (hasNFTStorageApiKey)="setHasNFTStorageApiKey($event)" (isLoading)="setIsLoading($event)"></app-settings>

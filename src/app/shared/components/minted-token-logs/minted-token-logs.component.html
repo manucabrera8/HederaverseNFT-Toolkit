@@ -1,0 +1,44 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container" style="margin: 30px auto;">
+
+    <a mat-raised-button (click)="onExport()">Export backup</a>
+
+    <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Import backup</button>
+    <input hidden type="file" (change)="onImport($event)" #fileInput>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+        
+            <!-- Token Id Column -->
+            <ng-container matColumnDef="tokenId">
+                <th mat-header-cell *matHeaderCellDef> Token Id </th>
+                <td mat-cell *matCellDef="let row"> {{row.tokenId}} </td>
+            </ng-container>
+
+            <!-- Max Supply Column -->
+            <ng-container matColumnDef="maxSupply">
+                <th mat-header-cell *matHeaderCellDef> Max Supply </th>
+                <td mat-cell *matCellDef="let row"> {{row.maxSupply}} </td>
+            </ng-container>
+
+            <!-- Minted NFT Column -->
+            <ng-container matColumnDef="mintedNFTs">
+                <th mat-header-cell *matHeaderCellDef> Minted NFTs </th>
+                <td mat-cell *matCellDef="let row"> {{row.mintedNFT }} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of toneks"></mat-paginator>
+    </div>
+
+</div>

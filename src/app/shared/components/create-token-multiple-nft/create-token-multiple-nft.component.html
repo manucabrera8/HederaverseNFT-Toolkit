@@ -1,0 +1,23 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="container" style="margin: 30px auto;">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center none">
+
+        <a routerLink="create-token" class="item" fxFlex fxFlex.sm fxLayoutAlign="center none">
+            <mat-card class="mat-card mat-focus-indicator mat-elevation-z8">
+                <mat-card-title class="mat-card-title">Create token</mat-card-title>
+                <div class="card-divider"></div>
+                <mat-card-content class="mat-card-content">Create token for the collection</mat-card-content>
+            </mat-card>
+        </a>
+        <a routerLink="mint-nft" class="item" fxFlex fxFlex.sm fxLayoutAlign="center none">
+            <mat-card class="mat-card mat-focus-indicator mat-elevation-z8">
+                <mat-card-title class="mat-card-title">Mint NFT</mat-card-title>
+                <div class="card-divider"></div>
+                <mat-card-content class="mat-card-content">Mint NFTs under your collection</mat-card-content>
+            </mat-card>
+        </a>
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>

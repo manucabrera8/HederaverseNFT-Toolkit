@@ -1,0 +1,71 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="container" style="margin: 30px auto;">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="50px">
+        <div fxFlex>
+            <div fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+                <mat-card class="text-center">
+                    
+                    <img [src]="_url" *ngIf="_format==='image' && _url" height="300"> <br/>
+                    <video [src]="_url" *ngIf="_format==='video' && _url" height="300" controls></video> <br/>
+                    
+                    <mat-card-actions style="text-align: center;">
+                        <button type="button" mat-raised-button (click)="fileInput.click()" color="primary">Choose File</button>
+                        <div *ngIf="file.invalid">
+                            <div *ngIf="file.errors?.['required']">
+                                <mat-error>File is required.</mat-error>
+                            </div>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+        <div fxFlex>
+            <div fxLayout="column">
+                <form [formGroup]="form" (ngSubmit)="createAndMint(form)" autocomplete="off" #formDirective="ngForm">
+
+                    <mat-form-field class="full-width" appearance="standard">
+                        <mat-label>Token</mat-label>
+                        <mat-select formControlName="token" #tokenInput>
+                          <mat-option *ngFor="let token of tokens" [value]="token.value">
+                            {{ token.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>Token is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="standard">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Type name" formControlName="name" #nameInput>
+                        <mat-error>Name is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="standard">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput rows="4" placeholder="Type description" formControlName="description" #descriptionInput></textarea>
+                        <mat-error>Description is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="standard">
+                        <mat-label>Creator</mat-label>
+                        <input matInput placeholder="Type creator" formControlName="creator" #creatorInput>
+                        <mat-error>Creator is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="standard">
+                        <mat-label>Category</mat-label>
+                        <mat-select formControlName="category" #categoryInput>
+                          <mat-option *ngFor="let category of categories" [value]="category.value">
+                            {{ category.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error>Category is required</mat-error>
+                    </mat-form-field>
+
+                    <input hidden type="file" (change)="onSelectFile($event)" formControlName="file" #fileInput>
+
+                    <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="!form.valid || disableSubmit">Mint</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

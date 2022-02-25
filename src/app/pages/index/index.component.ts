@@ -1,5 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CryptoService } from 'src/app/services/crypto.service';
+import { IsLoadingService } from 'src/app/services/is-loading.service';
 import { PatchNotesService } from 'src/app/services/patch-notes.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { PatchNotesService } from 'src/app/services/patch-notes.service';
 })
 export class IndexComponent implements OnInit {
 
-  @ViewChild('CreateToken', { static: true }) createToken!: TemplateRef<any>;
+  @ViewChild('NFT', { static: true }) nft!: TemplateRef<any>;
   @ViewChild('Settings', { static: true }) settings!: TemplateRef<any>;
 
   allTabs: any;
@@ -18,7 +20,14 @@ export class IndexComponent implements OnInit {
   hasNFTStorageApiKey?: boolean;
   accountId?: string;
 
-  constructor(private cryptoService: CryptoService, private patchNotes: PatchNotesService) {
+  isLoadingSub: Subscription;
+
+  constructor(private cryptoService: CryptoService, private isLoadingService: IsLoadingService, private patchNotes: PatchNotesService) {
+
+    this.isLoadingSub = this.isLoadingService.isLoading$.subscribe($event => {
+      this.setIsLoading($event);
+    });
+
     const localData = localStorage.getItem('userData');
     if(localData) {
       const userDataJson = JSON.parse(this.cryptoService.decrypt(localData!));
@@ -44,7 +53,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.allTabs = [
-      {name: 'Create Token', template: this.createToken},
+      {name: 'NFT', template: this.nft},
       {name: 'Settings', template: this.settings}
     ];
   }
@@ -64,7 +73,11 @@ export class IndexComponent implements OnInit {
     this.hasNFTStorageApiKey = hasNFTStorageApiKey;
   }
 
-  setIsLoading(isLoading: boolean) {
-    this.isLoading = isLoading;
+  setIsLoading($event: any): void {
+    this.isLoading = $event;
+  }
+
+  componentAdded(componentRef: any) {
+    console.log("componentRef", componentRef);
   }
 }

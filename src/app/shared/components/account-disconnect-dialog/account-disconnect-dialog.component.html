@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Are you sure?</h1>
+<div mat-dialog-content>
+    
+    <p><mat-icon color="warn">warning</mat-icon> Your token logs will disappear! make sure you have a backup file! <button mat-stroked-button color="accent" (click)="onExport()">Export backup</button></p>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    <button mat-raised-button (click)="onDisconnect()" color="primary">Disconnect</button>
+</div>

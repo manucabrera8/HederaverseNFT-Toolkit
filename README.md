@@ -1,4 +1,4 @@
-# ![HederaverseNFT](src/assets/images/48x48.png "HederaverseNFT") HederaverseNFT-Toolkit  👽 ![version](https://img.shields.io/badge/version-1.0.0-blueviolet.svg) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/HederaverseNFT) [![Chat](https://img.shields.io/badge/Support-on%20discord-7289da.svg)](https://discord.gg/56TxzvSFVS)
+# ![HederaverseNFT](src/assets/images/48x48.png "HederaverseNFT") HederaverseNFT-Toolkit  👽 ![version](https://img.shields.io/badge/version-1.1.0-blueviolet.svg) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/HederaverseNFT) [![Chat](https://img.shields.io/badge/Support-on%20discord-7289da.svg)](https://discord.gg/56TxzvSFVS)
 
 
 ***We are a group of designers and developers working on our NFT label inside Hedera network.***

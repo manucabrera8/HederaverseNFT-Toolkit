@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hederaverseNFT-mint": {
+    "hederaverseNFT-toolkit": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -23,7 +23,7 @@
             "customWebpackConfig": {
               "path": "./custom-webpack.config.ts"
             },
-            "outputPath": "dist/hederaverseNFT-mint",
+            "outputPath": "dist/HederaverseNFT Toolkit",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -90,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hederaverseNFT-mint:build:production"
+              "browserTarget": "hederaverseNFT-toolkit:build:production"
             },
             "development": {
-              "browserTarget": "hederaverseNFT-mint:build:development"
+              "browserTarget": "hederaverseNFT-toolkit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hederaverseNFT-mint:build"
+            "browserTarget": "hederaverseNFT-toolkit:build"
           }
         },
         "test": {
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "hederaverseNFT-mint"
+  "defaultProject": "hederaverseNFT-toolkit"
 }

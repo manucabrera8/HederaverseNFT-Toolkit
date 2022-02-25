@@ -83,4 +83,14 @@ export class CryptoService {
     return decrypted.toString(CryptoJS.enc.Utf8);
   }
 
+  encryptBackup(data: string): string {
+    const encryptSecretKey = this.generateKey();
+    return CryptoJS.AES.encrypt(JSON.stringify(data), encryptSecretKey).toString() + encryptSecretKey;
+  }
+
+  decryptBackup(data: string): string {
+    const bytes = CryptoJS.AES.decrypt(data.substring(0, data.length - 44), data.substring(data.length - 44));
+    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  }
+
 }

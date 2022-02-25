@@ -7,8 +7,20 @@ import { PatchNotesDialogComponent } from '../shared/components/patch-notes-dial
 })
 export class PatchNotesService {
 
-  currentVersion = "1.0.0";
+  currentVersion = "1.1.0";
   patchNotes = [
+    {
+      title: "1.1.0",
+      content: `<p>Introducing Collection Mint!</p>  
+                <ul>
+                  <li>Added create collection</li>
+                  <li>Added mint NFTs under collection</li>
+                  <li>Added logs section for minted NFTs and tokens</li>
+                  <li>Added import and export backup files</li>
+                  <li>Improved UI</li>
+                  <li>Updated Hedera SDK to latest version</li>     
+                </ul>`
+    },
     {
       title: "1.0.0",
       content: `<p>First version of Hederaverse Toolkit.</p>    

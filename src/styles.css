@@ -2,7 +2,8 @@
 
 
 body, html{ height: 100%; margin: 0; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #303030;}
+a, a:hover, a:active, a:visited, a:focus { text-decoration:none; }
 .mat-tab-body-wrapper{ flex-grow: 1; }
 
 .container,
@@ -53,4 +54,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .red-snackbar {
   background: #aa0d0d;
   color: #FFFFFF;
+}
+
+.item {
+  margin: 10px;
+}
+
+.item:focus {
+  outline: none;
+}
+
+.mat-card-title {
+  height: 33%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+.card-divider {
+  width: 40%;
+  height: 3px;
+  margin: 15px auto;
+  background: #3f51b5;
+}
+
+.mat-card-content {
+  text-align: center;
+  margin-bottom: 16px !important;
+}
+.mat-card {
+  width: 100%;
+}
+.mat-card:hover {
+  background: rgba(255,255,255,.04);
 }
